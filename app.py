@@ -32,7 +32,7 @@ model = YOLO(MODEL_PATH)
 left, center, right = st.columns([1, 2, 1])
 
 with center:
-    st.title("🎯 Custom Object Detection App")
+    st.title("Custom Object Detection App")
     st.write("Upload **gambar** atau **video** untuk mendeteksi objek menggunakan model YOLO custom.")
 
     # Choose input type
@@ -51,7 +51,7 @@ with center:
     if uploaded_file:
         if input_type == "Gambar":
             image = Image.open(uploaded_file)
-            st.image(image, caption="Gambar Asli", use_column_width=True)
+            st.image(image, caption="Gambar Asli", use_container_width=True)
             
             with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp_file:
                 image.save(temp_file.name)
